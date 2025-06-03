@@ -330,7 +330,7 @@ resource "null_resource" "telegram_notification" {
         $endTime = Get-Date
         $duration = $endTime - $startTime
         $durationString = "{0:D2}h:{1:D2}m:{2:D2}s" -f $duration.Hours, $duration.Minutes, $duration.Seconds
-        $message = "DESPLIEGUE DEL ESCENARIO CON 2 REDES LAN COMPLETADO A LAS: $((Get-Date).ToString('yyyy-MM-dd HH:mm:ss')). DURACIÓN DEL DESPLIEGUE: $durationString"
+        $message = "DESPLIEGUE DEL ESCENARIO CON 2 REDES LAN COMPLETADO EL DÍA Y HORA: $((Get-Date).ToString('yyyy-MM-dd HH:mm:ss')). DURACIÓN DEL DESPLIEGUE: $durationString"
         $uri = "https://api.telegram.org/bot${var.telegram_bot_token}/sendMessage"
         $body = @{
           chat_id = "${var.telegram_chat_id}"
